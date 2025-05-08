@@ -14,7 +14,7 @@ const AboutMe = () => {
       desc:'Positive Revies'
     },
     {
-      heading:"-1",
+      heading:"2",
       desc:'Experience'
     },
   ]
@@ -45,16 +45,19 @@ const AboutMe = () => {
         </div>
 
       </div>
-
-      <div className="flex flex-col md:flex-row items-center justify-around gap-6 md:gap-10 mt-0 pt-0 mr-[30px] ml-[30px]">
-        {array.map((element,index:number)=>(
-          <div className="text-center" key={index}>
-            <h2 className="text-8xl font-extrabold text-green-500 tracking-tight font-sans">{element.heading}</h2>
-            <h3 className="text-lg text-green-200 font-medium mt-2 font-sans">{element.desc}</h3>
+      
+      <div className="flex flex-wrap justify-center items-center gap-y-10 gap-x-6 px-6 py-10">
+        {array.map((element, index) => (
+          <div className="text-center w-40 sm:w-48 md:m-10" key={index}>
+            <h2 className="text-5xl sm:text-6xl md:text-8xl font-extrabold text-green-500 tracking-tight font-sans">
+              {element.heading}
+            </h2>
+            <h3 className="text-base sm:text-lg text-green-200 font-medium mt-2 font-sans">
+              {element.desc}
+            </h3>
           </div>
         ))}
-      </div>   
-
+      </div>
     </>
   )
 }
