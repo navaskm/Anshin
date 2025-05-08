@@ -39,7 +39,7 @@ const HomeDetails = () => {
       </div>
 
       {/* image container */}
-      <div className="flex-1 md:mt-0 flex justify-center">
+      <div className="flex-1 mt-0 flex justify-center">
         <img src="binu1.jpg" alt="binu" className="h-50 w-50 md:h-140 md:w-110 object-cover" />
       </div>
     </div>
