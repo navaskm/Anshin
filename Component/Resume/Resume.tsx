@@ -18,10 +18,10 @@ const Resume = () => {
     },
     {
       title: 'GRAPHIC DESIGN COURSE',
-      institution: 'XYZ DESIGN ACADEMY',
+      institution: 'MEDIA SPOT ACADEMY',
       years: '2019 to 2020',
       description:
-        'XYZ DESIGN ACADEMY | 2019 to 2020 – I completed an intensive professional graphic design course that equipped me with the skills and techniques needed to excel in the design industry. Throughout the program, I mastered software like Adobe Photoshop, Illustrator, and InDesign, while gaining a deep understanding of design principles such as color theory, typography, and layout composition. The course helped me develop a professional portfolio that showcases my creative abilities and design expertise.',
+        'MEDIA SPOT ACADEMY | 2022 to 2023 – I completed an intensive professional graphic design course that equipped me with the skills and techniques needed to excel in the design industry. Throughout the program, I mastered software like Adobe Photoshop, Illustrator, and InDesign, while gaining a deep understanding of design principles such as color theory, typography, and layout composition. The course helped me develop a professional portfolio that showcases my creative abilities and design expertise.',
     },
     {
       title: 'GRAPHIC DESIGN SKILLS',
@@ -36,7 +36,7 @@ const Resume = () => {
     <>
       <div className="text-center px-4 py-10 max-w-3xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
-          MY <span className="bg-gradient-to-r from-indigo-400 to-pink-500 text-transparent bg-clip-text">Resume</span>
+          MY <span className="bg-gradient-to-r from-indigo-400 to-pink-500 text-transparent bg-clip-text">RESUME</span>
         </h1>
         <p className="text-gray-300 text-base md:text-lg leading-relaxed">
         You're at the right place! Whether your project is large or small, I'm here to bring your creative vision to life.
