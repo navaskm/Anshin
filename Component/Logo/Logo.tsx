@@ -1,3 +1,5 @@
+"use client";
+
 const Logo = () => {
 
   const scrollToTop = () => {
@@ -14,4 +16,4 @@ const Logo = () => {
   )
 }
 
-export default Logo
+export default Logo;
