@@ -29,7 +29,6 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    // <nav className="bg-black shadow-md fixed top-0 left-0 w-full z-50" id='home'>
     <nav className="bg-black border-b-2 border-transparent shadow-md fixed top-0 left-0 w-full z-50" style={{
       borderImage: 'linear-gradient(to right, #6366f1, #ec4899)',
       borderImageSlice: 1,
