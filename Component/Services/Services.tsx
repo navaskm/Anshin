@@ -45,7 +45,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="px-6 py-16 bg-black text-white">
+    <section className="px-6 py-16 mt-15 bg-black text-white">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-extrabold mb-4">
         PROVIDING <span className="text-green-400">SERVICES</span>
