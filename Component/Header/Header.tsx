@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import {motion} from "framer-motion";
 import { Menu, X } from 'lucide-react';
+import Logo from '../Logo/Logo';
 
 const listVariants = {
   hidden: {
@@ -24,40 +25,35 @@ const itemVariants = {
   visible: { opacity: 1, x: 0 },
 }
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-50" id='home'>
+    // <nav className="bg-black shadow-md fixed top-0 left-0 w-full z-50" id='home'>
+    <nav className="bg-black border-b-2 border-transparent shadow-md fixed top-0 left-0 w-full z-50" style={{
+      borderImage: 'linear-gradient(to right, #6366f1, #ec4899)',
+      borderImageSlice: 1,
+    }} id='home'>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
 
         {/* Logo */}
-        <h1
-          className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 cursor-pointer"
-          onClick={scrollToTop}
-        >
-          Anshin <span className="text-black">T</span>
-        </h1>
+        <Logo/>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6 text-gray-700 font-medium">
+        <div className="hidden md:flex items-center space-x-6 text-white font-medium">
           <li className="hover:text-indigo-600 cursor-pointer list-none">HOME</li>
           <li className="hover:text-indigo-600 cursor-pointer list-none">ABOUT</li>
           <li className="hover:text-indigo-600 cursor-pointer list-none">SERVICES</li>
           <li className="hover:text-indigo-600 cursor-pointer list-none">CONTACT</li>
-          <img src="moon_icon.png" alt="moon" className="w-6 cursor-pointer" />
+          <img src="sun_icon.png" alt="moon" className="w-6 cursor-pointer" />
         </div>
 
         {/* Mobile Toggle Button */}
         <div className="md:hidden flex items-center space-x-4">
-          <img src="moon_icon.png" alt="moon" className="w-6 cursor-pointer" />
+          <img src="sun_icon.png" alt="moon" className="w-6 cursor-pointer" />
           <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X color="white" size={24} /> : <Menu size={24} color="white" />}
           </button>
         </div>
       </div>
@@ -67,7 +63,7 @@ const Header = () => {
       {isOpen && (
         <>
           <motion.ul
-            className="md:hidden bg-white px-4 pt-2 pb-4 space-y-2 shadow-md"
+            className="md:hidden px-4 pt-2 pb-4 space-y-2 shadow-md text-white"
             variants={listVariants}
             initial="hidden"
             animate="visible"
