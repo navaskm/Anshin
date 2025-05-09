@@ -25,14 +25,18 @@ const itemVariants = {
   visible: { opacity: 1, x: 0 },
 }
 
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="bg-black border-b-2 border-transparent shadow-md fixed top-0 left-0 w-full z-50" style={{
+    <nav id='home' className="bg-black border-b-2 border-transparent shadow-md fixed top-0 left-0 w-full z-50" style={{
       borderImage: 'linear-gradient(to right, #6366f1, #ec4899)',
       borderImageSlice: 1,
-    }} id='home'>
+    }}>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
 
@@ -41,10 +45,12 @@ const Header = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6 text-white font-medium">
-          <li className="hover:text-indigo-600 cursor-pointer list-none">HOME</li>
-          <li className="hover:text-indigo-600 cursor-pointer list-none">ABOUT</li>
-          <li className="hover:text-indigo-600 cursor-pointer list-none">SERVICES</li>
-          <li className="hover:text-indigo-600 cursor-pointer list-none">CONTACT</li>
+          <li className="hover:text-indigo-600 cursor-pointer list-none"><a href="#home" onClick={scrollToTop}>HOME</a></li>
+          <li className="hover:text-indigo-600 cursor-pointer list-none"><a href="#about">ABOUT ME</a></li>
+          <li className="hover:text-indigo-600 cursor-pointer list-none"><a href="#resume">RESUME</a></li>
+          <li className="hover:text-indigo-600 cursor-pointer list-none"><a href="#services">SERVICES</a></li>
+          <li className="hover:text-indigo-600 cursor-pointer list-none"><a href="#skills">SKILLS</a></li>
+          <li className="hover:text-indigo-600 cursor-pointer list-none"><a href="#contact">CONTACT</a></li>
           <img src="sun_icon.png" alt="moon" className="w-6 cursor-pointer" />
         </div>
 
@@ -67,10 +73,32 @@ const Header = () => {
             initial="hidden"
             animate="visible"
           >
-            <motion.li variants={itemVariants} className="hover:text-indigo-600 cursor-pointer">HOME</motion.li>
-            <motion.li variants={itemVariants} className="hover:text-indigo-600 cursor-pointer">ABOUT ME</motion.li>
-            <motion.li variants={itemVariants} className="hover:text-indigo-600 cursor-pointer">SERVICES</motion.li>
-            <motion.li variants={itemVariants} className="hover:text-indigo-600 cursor-pointer">CONTACT</motion.li>
+            <motion.li variants={itemVariants} className="hover:text-indigo-600 cursor-pointer">
+              <a href="#home" onClick={(e) => {
+                scrollToTop();
+                setIsOpen(false);
+              }}>HOME</a>
+            </motion.li>
+
+            <motion.li variants={itemVariants} className="hover:text-indigo-600 cursor-pointer">
+              <a href="#about1" onClick={()=>setIsOpen(false)}>ABOUT ME</a>
+            </motion.li>
+
+            <motion.li variants={itemVariants} className="hover:text-indigo-600 cursor-pointer list-none">
+              <a href="#resume1" onClick={()=>setIsOpen(false)}>RESUME</a>
+            </motion.li>
+
+            <motion.li variants={itemVariants} className="hover:text-indigo-600 cursor-pointer">
+              <a href="#services" onClick={()=>setIsOpen(false)}>SERVICES</a>
+            </motion.li>
+
+            <motion.li variants={itemVariants} className="hover:text-indigo-600 cursor-pointer list-none">
+              <a href="#skills" onClick={()=>setIsOpen(false)}>SKILLS</a>
+            </motion.li>
+
+            <motion.li variants={itemVariants} className="hover:text-indigo-600 cursor-pointer">
+              <a href="#contact" onClick={()=>setIsOpen(false)}>CONTACT</a>
+            </motion.li>
           </motion.ul>
         </>
       )}

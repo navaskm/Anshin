@@ -37,6 +37,7 @@ const Skills = () => {
           </div>
         ))}
       </div>
+      <p id='contact'></p>
     </div>
   );
 };

@@ -26,11 +26,3 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
-
-/* Add to your global CSS or module CSS */
-nav::after {
-  content: '';
-  display: block;
-  height: 2px;
-  background: linear-gradient(to right, #6366f1, #ec4899);
-}

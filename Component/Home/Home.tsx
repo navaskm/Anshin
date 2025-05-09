@@ -27,7 +27,7 @@ const HomeDetails = () => {
         <p className="text-lg sm:text-xl text-white mb-2">
           BASED IN <span className="font-semibold text-indigo-600">MALAPPURAM</span>
         </p>
-        <p className="max-w-xl text-white text-base sm:text-lg mt-4 mx-auto md:mx-0 h-[100px] md:w-[100px] sm:whitespace-nowrap relative">
+        <p id='about1' className="max-w-xl text-white text-base sm:text-lg mt-4 mx-auto md:mx-0 h-[100px] md:w-[100px] sm:whitespace-nowrap relative">
           Fueling Your Brand with&nbsp;
           <span className="font-semibold bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
             {text}

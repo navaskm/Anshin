@@ -21,7 +21,7 @@ const AboutMe = () => {
 
   return (
     <>
-      <div className="min-h-screen  text-white px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-12 pt-0 mt-0 pb-0 mb-0">
+      <div id="about" className="min-h-screen  text-white px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-12 pt-0 mt-0 pb-0 mb-0">
 
         {/* image container */}
         <div className="flex-1 hidden md:flex justify-center">
@@ -52,11 +52,12 @@ const AboutMe = () => {
             <h2 className="text-5xl sm:text-6xl md:text-8xl font-extrabold text-green-500 tracking-tight font-sans">
               {element.heading}
             </h2>
-            <h3 className="text-base sm:text-lg text-green-200 font-medium mt-2 font-sans">
+            <h3 id='resume' className="text-base sm:text-lg text-green-200 font-medium mt-2 font-sans">
               {element.desc}
             </h3>
           </div>
         ))}
+        <p id='resume1'></p>
       </div>
     </>
   )

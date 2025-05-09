@@ -68,6 +68,7 @@ const Services = () => {
           </div>
         ))}
       </div>
+      <p id='skills'></p>
     </section>
   );
 };

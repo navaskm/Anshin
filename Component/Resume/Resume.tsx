@@ -65,7 +65,7 @@ const Resume = () => {
 
       <p className="text-center text-xl md:text-2xl font-medium text-gray-300 leading-relaxed mt-8 px-4 md:px-0 max-w-2xl mx-auto">
         Almost 77% of businesses worldwide have already partnered with the best graphic designers in the industry, 
-        and this growing trend is here to stay. <span className="text-indigo-400 font-semibold">What are you waiting for</span> 
+        and this growing trend is here to stay. <span id='services' className="text-indigo-400 font-semibold">What are you waiting for</span> 
         to bring your vision to life?
       </p>
     </>
