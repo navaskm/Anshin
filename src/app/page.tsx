@@ -6,6 +6,7 @@ import Services from "../../Component/Services/Services";
 import Skills from "../../Component/Skills/Skills";
 import WhatsApp from "../../Component/WhatsApp/WhatsApp";
 import Footer from "../../Component/Footer/Footer";
+import Contact from "../../Component/Contact/Contact";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Resume/>
       <Services/>
       <Skills/>
+      <Contact/>
       <WhatsApp/>
       <Footer/>
     </>
