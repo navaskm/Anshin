@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useTheme } from '@/context/ThemeContext';
 import { motion } from 'motion/react';
 
 const style={
@@ -9,6 +10,7 @@ const style={
 
 const Contact = () => {
 
+  const {theme} = useTheme();
   const [result, setResult] = useState("");
 
   const onSubmit = async (event:React.FormEvent<HTMLFormElement>) => {
@@ -41,36 +43,36 @@ const Contact = () => {
       whileInView={{opacity:1}}
       transition={{duration:1}}
       id="contact" 
-      className="w-full px-[12%] py-10 scroll-mt-20"
+      className={`w-full px-[12%] py-10 scroll-mt-20 ${theme==="Dark"?'bg-black':'bg-white'}`}
       suppressHydrationWarning
     >
 
-    <motion.h4
-      initial={{ y: -20, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
-      className="text-center text-sm md:text-base uppercase tracking-widest text-cyan-400 mb-4"
-    >
-      Connect with me
-    </motion.h4>
+      <motion.h4
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="text-center text-sm md:text-base uppercase tracking-widest text-cyan-400 mb-4"
+      >
+        Connect with me
+      </motion.h4>
 
-    <motion.h2
-      initial={{ y: -20, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.5 }}
-      className="text-center text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 mb-4"
-    >
-      Get in touch
-    </motion.h2>
+      <motion.h2
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="text-center text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 mb-4"
+      >
+        Get in touch
+      </motion.h2>
 
-    <motion.p
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.7 }}
-      className="text-center max-w-2xl mx-auto mt-4 mb-10 text-gray-300 leading-relaxed text-sm md:text-base"
-    >
-      I’d love to hear from you! If you have any questions, comments, or feedback, please use the form below to reach out.
-    </motion.p>
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        className={`text-center max-w-2xl mx-auto mt-4 mb-10 ${theme==="Dark"?'text-gray-300':'text-black'} leading-relaxed text-sm md:text-base`}
+      >
+        I’d love to hear from you! If you have any questions, comments, or feedback, please use the form below to reach out.
+      </motion.p>
 
       <form onSubmit={onSubmit} className="max-w-2xl mx-auto bg-gradient-to-br from-[#1a1a2e] to-[#16213e] p-8 rounded-2xl shadow-lg">
 

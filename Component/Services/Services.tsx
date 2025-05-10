@@ -1,4 +1,4 @@
-import React from 'react';
+import { useTheme } from '@/context/ThemeContext';
 
 const services = [
   {
@@ -44,13 +44,16 @@ const services = [
 ];
 
 const Services = () => {
+
+  const {theme} = useTheme();
+
   return (
-    <section className="px-6 py-16 mt-15 bg-black text-white">
+    <section className={`px-6 py-16 pt-28 ${theme==="Dark"?' bg-black text-white':' bg-white text-black'}`}>
       <div className="text-center mb-12">
         <h2 className="text-4xl font-extrabold mb-4">
         PROVIDING <span className="text-green-400">SERVICES</span>
         </h2>
-        <p className="text-lg max-w-xl mx-auto text-center italic text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-pink-400">
+        <p className={`text-lg max-w-xl bg-clip-text ${theme==="Dark"?'bg-gradient-to-r from-green-300 to-pink-400':'bg-gradient-to-r from-purple-700 via-blue-600 to-green-600'} mx-auto text-center italic text-transparent`}>
           I make your ads more attractive and creative.
         </p>
       </div>

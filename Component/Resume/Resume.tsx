@@ -1,6 +1,9 @@
-import React from 'react';
+import { useTheme } from '@/context/ThemeContext';
 
 const Resume = () => {
+
+  const {theme} = useTheme();
+
   const education = [
     {
       title: 'HIGH SCHOOL',
@@ -34,17 +37,19 @@ const Resume = () => {
 
   return (
     <>
-      <div className="text-center px-4 py-10 max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
-          MY <span className="bg-gradient-to-r from-indigo-400 to-pink-500 text-transparent bg-clip-text">RESUME</span>
-        </h1>
-        <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-        You're at the right place! Whether your project is large or small, I'm here to bring your creative vision to life.
-        Below you'll find everything you need to know about me as a <span className="font-medium text-white">Graphic Designer</span>.
-        </p>
+      <div className={`${theme === "Dark" ? "bg-black" : "bg-white"}`}>
+        <div className="text-center px-4 py-10 max-w-3xl mx-auto">
+          <h1 className={`text-4xl md:text-5xl font-extrabold mb-4 ${theme === "Dark" ? "text-white" : "text-black"}`}>
+            MY <span className="bg-gradient-to-r from-indigo-400 to-pink-500 text-transparent bg-clip-text">RESUME</span>
+          </h1>
+          <p className={`text-base md:text-lg leading-relaxed ${theme === "Dark" ? "text-gray-300" : "text-black"}`}>
+            You're at the right place! Whether your project is large or small, I'm here to bring your creative vision to life.
+            Below you'll find everything you need to know about me as a <span className={`font-medium ${theme === "Dark" ? "text-white" : "text-black"}`}>Graphic Designer</span>.
+          </p>
+        </div>
       </div>
 
-      <div className="min-h-screen flex justify-center items-center px-4 py-10">
+      <div className={`min-h-screen flex justify-center items-center px-4 py-10 ${theme==="Dark"?'bg-black':'bg-white'}`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {education.map((item, index) => (
             <div
@@ -63,11 +68,14 @@ const Resume = () => {
         </div>
       </div>
 
-      <p className="text-center text-xl md:text-2xl font-medium text-gray-300 leading-relaxed mt-8 px-4 md:px-0 max-w-2xl mx-auto">
-        Almost 77% of businesses worldwide have already partnered with the best graphic designers in the industry, 
-        and this growing trend is here to stay. <span id='services' className="text-indigo-400 font-semibold">What are you waiting for</span> 
-        to bring your vision to life?
-      </p>
+      <div className={`${theme === "Dark" ? "bg-black" : "bg-white"} w-full`}>
+        <p className={`text-center text-xl md:text-2xl font-medium leading-relaxed px-4 md:px-0 max-w-2xl mx-auto 
+          ${theme === "Dark" ? "text-gray-300" : "text-gray-800"}`}>
+          Almost 77% of businesses worldwide have already partnered with the best graphic designers in the industry, 
+          and this growing trend is here to stay. <span id='services' className="text-indigo-500 font-semibold">What are you waiting for</span> 
+          to bring your vision to life?
+        </p>
+      </div>
     </>
     
   );

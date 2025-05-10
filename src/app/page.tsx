@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "../../Component/Header/Header";
 import HomeDetails from "../../Component/Home/Home";
 import AboutMe from "../../Component/AboutMe/AboutMe";

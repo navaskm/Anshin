@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {motion} from "framer-motion";
 import { Menu, X } from 'lucide-react';
 import Logo from '../Logo/Logo';
+import { useTheme } from '@/context/ThemeContext';
 
 const listVariants = {
   hidden: {
@@ -30,10 +31,13 @@ const scrollToTop = () => {
 };
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+
+  const { theme, toggleTheme } = useTheme();
+
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav id='home' className="bg-black border-b-2 border-transparent shadow-md fixed top-0 left-0 w-full z-50" style={{
+    <nav id='home' className={`${theme === 'Dark'?"bg-black":"bg-white"} border-b-2 border-transparent shadow-md fixed top-0 left-0 w-full z-50`} style={{
       borderImage: 'linear-gradient(to right, #6366f1, #ec4899)',
       borderImageSlice: 1,
     }}>
@@ -44,21 +48,21 @@ const Header = () => {
         <Logo/>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6 text-white font-medium">
+        <div className={`hidden md:flex items-center space-x-6 ${theme === 'Dark'?"text-white":"text-black"} font-medium`}>
           <li className="hover:text-indigo-600 cursor-pointer list-none"><a href="#home" onClick={scrollToTop}>HOME</a></li>
           <li className="hover:text-indigo-600 cursor-pointer list-none"><a href="#about">ABOUT ME</a></li>
           <li className="hover:text-indigo-600 cursor-pointer list-none"><a href="#resume">RESUME</a></li>
           <li className="hover:text-indigo-600 cursor-pointer list-none"><a href="#services">SERVICES</a></li>
           <li className="hover:text-indigo-600 cursor-pointer list-none"><a href="#skills">SKILLS</a></li>
           <li className="hover:text-indigo-600 cursor-pointer list-none"><a href="#contact">CONTACT</a></li>
-          <img src="sun_icon.png" alt="moon" className="w-6 cursor-pointer" />
+          <img src={`${theme === 'Dark'? 'sun_icon.png':'moon_icon.png'}`} alt="moon" className="w-6 cursor-pointer" onClick={toggleTheme}/>
         </div>
 
         {/* Mobile Toggle Button */}
         <div className="md:hidden flex items-center space-x-4">
-          <img src="sun_icon.png" alt="moon" className="w-6 cursor-pointer" />
+          <img src={`${theme === 'Dark'? 'sun_icon.png':'moon_icon.png'}`} alt="moon" className="w-6 cursor-pointer" onClick={toggleTheme}/>
           <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X color="white" size={24} /> : <Menu size={24} color="white" />}
+            {isOpen ? <X color={`${theme === 'Dark'?'white':'black'}`} size={24} /> : <Menu size={24} color={`${theme === 'Dark'?'white':'black'}`} />}
           </button>
         </div>
       </div>
@@ -68,7 +72,7 @@ const Header = () => {
       {isOpen && (
         <>
           <motion.ul
-            className="md:hidden px-4 pt-2 pb-4 space-y-2 shadow-md text-white"
+            className={`md:hidden px-4 pt-2 pb-4 space-y-2 shadow-md ${theme === 'Dark'?'text-white':'text-black'}`}
             variants={listVariants}
             initial="hidden"
             animate="visible"

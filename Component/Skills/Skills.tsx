@@ -1,6 +1,9 @@
-import React from 'react';
+import { useTheme } from '@/context/ThemeContext';
 
 const Skills = () => {
+
+  const {theme} = useTheme();
+
   const skills = [
     {
       name: 'Adobe Photoshop',
@@ -20,7 +23,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="bg-black py-16 px-6 text-white text-center">
+    <div className={`${theme==="Dark"?'bg-black':'bg-white'} py-16 px-6 text-center`}>
       <h1 className="text-4xl font-extrabold mb-10 bg-gradient-to-r from-emerald-400 via-teal-400 to-green-500 bg-clip-text text-transparent">
         MY SKILLS
       </h1>
