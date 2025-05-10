@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useTheme } from '@/context/ThemeContext';
 
 const Resume = () => {
@@ -37,8 +38,20 @@ const Resume = () => {
 
   return (
     <>
-      <div className={`${theme === "Dark" ? "bg-black" : "bg-white"}`}>
-        <div className="text-center px-4 py-10 max-w-3xl mx-auto">
+      <motion.div
+        className={`${theme === "Dark" ? "bg-black" : "bg-white"}`}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          className="text-center px-4 py-10 max-w-3xl mx-auto"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
           <h1 className={`text-4xl md:text-5xl font-extrabold mb-4 ${theme === "Dark" ? "text-white" : "text-black"}`}>
             MY <span className="bg-gradient-to-r from-indigo-400 to-pink-500 text-transparent bg-clip-text">RESUME</span>
           </h1>
@@ -46,16 +59,39 @@ const Resume = () => {
             You're at the right place! Whether your project is large or small, I'm here to bring your creative vision to life.
             Below you'll find everything you need to know about me as a <span className={`font-medium ${theme === "Dark" ? "text-white" : "text-black"}`}>Graphic Designer</span>.
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className={`min-h-screen flex justify-center items-center px-4 py-10 ${theme==="Dark"?'bg-black':'bg-white'}`}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <motion.div
+        className={`min-h-screen flex justify-center items-center px-4 py-10 ${theme==="Dark"?'bg-black':'bg-white'}`}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.3
+              }
+            }
+          }}
+        >
           {education.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-gray-800 text-white p-6 rounded-2xl shadow-lg max-w-[520px] mx-auto border border-gray-700 transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-indigo-500 hover:shadow-indigo-500/40"
-            >        
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-2xl font-bold mb-2 bg-gradient-to-r from-emerald-400 to-rose-500 text-transparent bg-clip-text inline-block w-fit">
                 {item.title}
               </h2>
@@ -63,21 +99,26 @@ const Resume = () => {
                 <span className="font-medium text-white">{item.institution}</span> | {item.years}
               </p>
               <p className="mt-2 text-gray-300">{item.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className={`${theme === "Dark" ? "bg-black" : "bg-white"} w-full`}>
+      <motion.div
+        className={`${theme === "Dark" ? "bg-black" : "bg-white"} w-full`}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
         <p className={`text-center text-xl md:text-2xl font-medium leading-relaxed px-4 md:px-0 max-w-2xl mx-auto 
           ${theme === "Dark" ? "text-gray-300" : "text-gray-800"}`}>
           Almost 77% of businesses worldwide have already partnered with the best graphic designers in the industry, 
           and this growing trend is here to stay. <span id='services' className="text-indigo-500 font-semibold">What are you waiting for</span> 
           to bring your vision to life?
         </p>
-      </div>
+      </motion.div>
     </>
-    
   );
 };
 
