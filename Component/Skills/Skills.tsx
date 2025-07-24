@@ -64,7 +64,8 @@ const Skills = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <img src={skill.icon} alt={skill.name} className='flex justify-center mb-4 rounded-2xl'/>
+        <img src={skill.icon} alt={skill.name} className='flex justify-center mb-4 rounded-2xl w-30 md:w-auto 
+        ml-[35%] md:ml-auto'/>
         <h3 className="text-xl font-semibold text-white mb-2">{skill.name}</h3>
         <p className="text-white text-sm leading-relaxed">{skill.description}</p>
       </motion.div>

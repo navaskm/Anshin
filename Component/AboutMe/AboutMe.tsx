@@ -26,7 +26,7 @@ const AboutMe = () => {
 
   return (
     <>
-      <div id="about" className={`min-h-screen ${theme==="Dark"?'bg-black':'bg-white'} px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-12 pt-0 mt-0 pb-0 mb-0`}>
+      <div id="about" className={`min-h-screen ${theme==="Dark"?'bg-black':'bg-white'} px-6 py-6 md:py-16 flex flex-col md:flex-row items-center justify-center gap-12 pt-0 mt-0 pb-0 mb-0`}>
 
         {/* image container */}
         <motion.div
@@ -60,7 +60,7 @@ const AboutMe = () => {
       </div>
 
       <motion.div
-        className={`flex flex-wrap justify-center items-center gap-y-10 gap-x-6 px-6 py-10 ${theme==="Dark"?'bg-black':'bg-white'}`}
+        className={`flex flex-wrap justify-center items-center gap-y-10 gap-x-6 px-6 py-0 md:py-10 ${theme==="Dark"?'bg-black':'bg-white'}`}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.2 }}

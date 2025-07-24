@@ -63,7 +63,7 @@ const HomeDetails = () => {
         <img
           src={theme === 'Dark' ? 'binu1.jpg' : 'binu2.jpg'}
           alt="binu"
-          className="h-50 w-50 md:h-140 md:w-110 object-cover rounded-xl shadow-lg"
+          className="h-80 w-80 md:h-140 md:w-110 object-cover rounded-xl shadow-lg"
         />
       </motion.div>
     </div>
