@@ -32,7 +32,7 @@ const Resume = () => {
       institution: 'N/A',
       years: 'Ongoing',
       description:
-        'With a focus on continuous improvement, I have honed a variety of graphic design skills, including but not limited to: brand identity creation, logo design, digital illustrations, print media design, and web design. Additionally, I have expertise in the use of design tools such as Adobe Creative Suite (Photoshop, Illustrator, InDesign), Sketch, and Figma. My strong eye for detail, creativity, and understanding of design trends allows me to deliver visually appealing and impactful design solutions.6d64b1c4-3f7a-4b0b-9023-d72ba702ee7e',
+        'With a focus on continuous improvement, I have honed a variety of graphic design skills, including but not limited to: brand identity creation, logo design, digital illustrations, print media design, and web design. Additionally, I have expertise in the use of design tools such as Adobe Creative Suite (Photoshop, Illustrator, InDesign), Sketch, and Figma. My strong eye for detail, creativity, and understanding of design trends allows me to deliver visually appealing and impactful design solutions.',
     },
   ];
 
