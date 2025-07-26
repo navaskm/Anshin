@@ -83,24 +83,27 @@ const Resume = () => {
             }
           }}
         >
-          {education.map((item, index) => (
-            <motion.div
-              key={index}
-              className="bg-gray-800 text-white p-6 rounded-2xl shadow-lg max-w-[520px] mx-auto border border-gray-700 transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-indigo-500 hover:shadow-indigo-500/40"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-2xl font-bold mb-2 bg-gradient-to-r from-emerald-400 to-rose-500 text-transparent bg-clip-text inline-block w-fit">
-                {item.title}
-              </h2>
-              <p className="text-sm text-gray-400 mb-1">
-                <span className="font-medium text-white">{item.institution}</span> | {item.years}
-              </p>
-              <p className="mt-2 text-gray-300">{item.description}</p>
-            </motion.div>
-          ))}
+          {education.map((item, index) => {
+            const isLeftToRight = index % 2 === 0;
+            return (
+              <motion.div
+                key={index}
+                className="bg-gray-800 text-white p-6 rounded-2xl shadow-lg max-w-[520px] mx-auto border border-gray-700 transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-indigo-500 hover:shadow-indigo-500/40"
+                initial={{ opacity: 0, x: isLeftToRight ? -100 : 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-2xl font-bold mb-2 bg-gradient-to-r from-emerald-400 to-rose-500 text-transparent bg-clip-text inline-block w-fit">
+                  {item.title}
+                </h2>
+                <p className="text-sm text-gray-400 mb-1">
+                  <span className="font-medium text-white">{item.institution}</span> | {item.years}
+                </p>
+                <p className="mt-2 text-gray-300">{item.description}</p>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </motion.div>
 
